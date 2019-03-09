@@ -83,7 +83,7 @@ def check_sides(pos, v, side): #U: Checks if the molecule bounced with a side
     if pos > side:
         v= -v
         pos-= 2*(pos-side)
-    if pos < side:
+    if pos < 0:
         v= -v
         pos-= 2*pos
 
@@ -91,7 +91,7 @@ def check_sides(pos, v, side): #U: Checks if the molecule bounced with a side
 
 def simmulate(n=20, r=1, dt=1, which=[1], vol= 50, vmin=0, vmax=0): 
     #A: n=ammount of molecules; r= ammount of frames; dt= delta time in seconds; which= possible masses for the molecules; vol= volume in cm3; vmin/vmax= range for the initial speeds
-    print("START simmulation)
+    print("START simmulation")
     K= 1E-1 #A: I use this value because it works for me, but the actual constant K = 1.38064852E-23
     
     pos_x, pos_y, pos_z= random_start(n, vol, vol, vol)
